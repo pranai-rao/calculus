@@ -25,6 +25,32 @@
         </ul>
         <p>But how do you find the area between two curves?</p>
         <img src="img/ABC1.png" height="250">
-        <p>Recall the concept of <a href="">net signed area</a>.</p>
+        <p>Recall the concept of <a href="">net signed area</a>. By splitting the area between the curve into subintervals of width \(\Delta x_k\) and height \(x_k^*\).</p>
+        <img src="img/ABC2.png" height="250">
+        <p>So the area of a subinterval will be: $$f(x_k^*)-g(x_k^*)\Delta x_k$$</p>
+        <p>Then, we can add the area of the subintervals: $$\sum_{k=1}^nf(x_k^*)-g(x_k^*)\Delta x$$</p>
+        <p>And to find an exact number: $$\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)-g(x_k^*)\Delta x$$</p>
+        <p>Now, we can simplify this Riemann sum using integrals: $$\int_a^bf(x)-g(x)dx$$</p>
+
+        <h2>Area Formula</h2>
+        <p>If \(f\) and \(g\) are continuous functions on the interval \([a,b]\), and if \(f(x)\geq g(x)\) for all \(x\) in \([a,b]\), then the area of the region bounded above by \(y=f(x)\), below by \(y=g(x)\), on the left by the line \(x=a\), and on the right by the line \(x=b\) is $$A=\int_a^b[f(x)-g(x)]dx$$</p>
+        
+        <h2>Process</h2>
+        <ol class="practice">
+            <li>Find the area of the region bounded above by \(y=x+6\), bounded below by \(y=x^2\), and bounded on the sides by the lines \(x=0\) and \(x=2\).</li>
+            <p>Steps:</p>
+            <ol>
+                <li>Draw a picture, and find the limits of integration. In this case, \([0,2]\).</li>
+                <li>Draw the rectangle.</li>
+                <li>Write the area of the rectangle. \(dA=(x+6-x^2)dx\).</li>
+                <li>Write the integral. \(\int_0^2x+6-x^2dx\)</li>
+                <li>Integrate. \(\frac{34}{3}\)</li>
+            </ol>
+        </ol>
+        <p class="bold">If you are not explicitly given the limits of integration in the problem, <span class="italic">you must find the limits algebraically</span>! This is typically the intersection of the curves.</p>
+
+        <h2>Area Formula Revisited</h2>
+        <p>Sometimes it will be much easier to find the area of a region by integrating with respect to \(y\) rather than \(x\). It is possible that vertical subsections (integrating with respect to \(x\)) involves two integral expressions, but horizontal subsections (integrating with respect to \(y\)) only requires one.</p>
+        <p>If \(w\) and \(v\) are continuous functions, and if \(w(y)\geq v(y)\) for all \(y\) in \([c,d]\), then the area of the region bounded on the left by \(x=v(y)\), on the right by \(x=w(y)\), below by \(y=c\), and above by \(y=d\) is $$A=\int_c^d[w(y)-v(y)]dy$$</p>
     </body>
 </html>
