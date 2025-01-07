@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Definite Integrals</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="NumericApproximation.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="FTC1.html">Next</a></div>
+        </div>
+        <h1>Definite Integrals</h1>
+        <p>Definite integrals will link the concepts of area under the curve to the idea of antiderivatives and integrals. It will give an avenue to explore length, volume, density, probability, and work.</p>
+        <p>If the function \(f\) is continuous on \([a,b]\), then the area \(A\) under the curve \(y=f(x)\) over the interval \([a,b]\) is defined by $$A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x$$</p>
+        <p>A function is said to integrable on a finite closed interval \([a,b]\) if the limit $$\lim_{\mathrm{max}\Delta x_k\to0}\sum_{k=1}^nf(x_k^*)\Delta x_k$$ exists and does not depend on the choice of partitions or on the choice of points \(x_k^*\) in the subintervals. When this is the case, we denote the limit by the symbol $$\int_a^bf(x)dx=\lim_{\mathrm{max}\Delta x_k\to0}\sum_{k=1}^nf(x_k^*)\Delta x_k$$ which is called the definite integral of \(f\) from \(a\) to \(b\).</p>
+        <p>A definite integral is the limit of a Riemann sum:</p>
+        <p>$$\sum_{k=1}^n\to\int_a^b$$</p>
+        <p>$$f(x_k^*)\to f(x)$$</p>
+        <p>$$\Delta x_k\to dx$$</p>
+        
+        <h2>Notation</h2>
+        <p>$$\int_a^bf(x)dx$$</p>
+        <ul>
+            <li>Integral symbol: \(\int\)</li>
+            <li>Limits of integration (\(a\) and \(b\)): \(\int_a^b\)</li>
+            <li>Integrand: \(f(x)\)</li>
+            <li>Differential: \(dx\)</li>
+            <li>Pronunciation: The integral from \(a\) to \(b\) of \(f(x)dx\).</li>    
+        </ul>
+
+        <h2>Net Signed Area</h2>
+        <p>If a function \(f\) is continuous on an interval \([a,b]\) then \(f\) is integrable on \([a,b]\), and the net signed area \(A\) between the graph of \(f\) and the x-axis is $$A=\int_a^bf(x)dx$$</p>
+        
+        <h2>Properties</h2>
+        <ul class="double">
+            <li>If \(a\) is in the domain of \(f\) then \(\int_a^bf(x)dx=0\)</li>
+            <li>If \(f\) is integrable on \([a,b]\), then \(\int_b^af(x)dx=-\int_a^bf(x)dx\)</li>
+            <li>If \(c\) is a constant, then \(\int_a^bcf(x)dx=c\int_a^bf(x)dx\)</li>
+            <li>\(\int_a^b[f(x)\pm g(x)]=\int_a^bf(x)dx\pm\int_a^bg(x)dx\)</li>
+        </ul>
+    </body>
+</html>

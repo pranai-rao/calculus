@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Net Change</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="ImproperIntegrals.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="AverageValue.html">Next</a></div>
+        </div>
+        <h1>Integral as Net Change and Accumulation Functions</h1>
+        <h2>Premise</h2>
+        <p>You work for an oil company. They have recently discovered a large oil reserve in the arctic. The major issue: the oil is very deep under the surface—50,000 feet to be exact.</p>
+        <p>Before deciding whether to drill and extract the oil, the Board of Directors needs to have an idea of about how much it would cost to simply drill the well. The company knows that it will cost $39 per foot on the surface; however, as they drill deeper into the Earth, the cost per foot grows exponentially. At a depth of 16,000 feet, the cost is $81 per foot.</p>
+        <h3>Tasks</h3>
+        <ol>
+            <li>Determine the function that models the cost of drilling the oil well. <span class="italic">Do <span class="bold">not</span> use a calculator</span>.</li>
+            <li>Determine the total cost of digging the well.</li>
+        </ol>
+        <hr>
+        <p>So far, we have looked at ways to find definite integrals, but now we need to understand how to apply them.</p>
+        <p>It is important to note that the total cost of drilling the well is <span class="bi">not</span> the result of plugging the depth into the function you found in Part 1 of the problem.</p>
+        <p>The reason? The function in Part 1 models the <span class="bold">rate</span> at which the cost per foot changed as you drill deeper into the ground.</p>
+        <p>In fact, it is the area under the curve that represents the total cost of drilling the well.</p>
+        <p>Now, we have a mathematical method of finding that total cost—by finding the definite integral: $$\int_a^bf(t)dt$$</p>
+        <p>This idea will work regardless of what the function represents—what matters is that it is a rate—and this leads us into the Net Change Theorem.</p>
+
+        <h2>Net Change Theorem</h2>
+        <p>This theorem is just a restatement of the <a href="FTC1.html">FTC Part 1</a> in an applied situation.</p>
+        <br>
+        <p>The integral of a rate of change is the total net change: $$\int_a^bF'(x)dx=F(b)-F(a)$$</p>
+        <br>
+        <p>The FTC Part 1 tells us more than just how to evaluate a definite integral; it tells us that if we are looking for the total amount that something changes, we need only integrate the rate at which it is changing.</p>
+        <p class="dumbold">In other words: to find a total amount, integrate a rate.</p>
+        <p>Often, problems using this idea are phrased in terms of knowing a beginning amount and wanting to find the ending amount (not the total amount).</p>
+        <p>To solve these problems, all we need to do is to rearrance the terms so that we have a formula for \(F(b)\): $$F(b)=F(a)+\int_a^bF'(x)dx$$</p>
+
+        <h3>Example</h3>
+        <ol class="practice">
+            <li>If \(f(x)\) is the slope of a trail at a distance of \(x\) miles from the start of the trail, what does \(\int_3^5f(x)dx\) represent?</li>
+            <p class="bold">The total change in elevation from \(x=3\) to \(x=5\).</p>
+
+            <li>A honeybee population starts with 100 bees and increases at a rate of \(n'(t)\) bees per week. What does \(100+\int_0^{15}n'(t)dt\) represent?</li>
+            <p class="bold">The total number of bees in the population after 15 weeks.</p>
+        </ol>
+        <p>Recall that at its core, a definite integral is just a sum (a <a href="DefiniteIntegrals.html">Riemann sum</a>) where we take the limit as the small pieces get more numerous.</p>
+        <p>Although the problems we will see are diverse, the required calculations can all be approached by the same procedure we used to find area: breaking the required calculation into "small parts," making an approximation for each part, adding the approximations from the parts by using a definite integral (remembering that this is really the limit of a Riemann sum).</p>
+
+        <h3>General Process</h3>
+        <ol>
+            <li>Determine the quantity you are trying to find.</li>
+            <li>Write an expression for one small piece of that quantity.</li>
+            <li>Determine the limits for the variable of integration and write a definite integral.</li>
+            <li>Evaluate the integral—by hand or by calculator.</li>
+        </ol>
+
+        <h3>Example</h3>
+        <p>Fuel oil is pumped into a tank at a rate of \(r(t)=150-0.9t\) gallons per minute, where \(t\) is the time in minutes. The tank is empty at the beginning of the filling process. How much fuel oil is in the tank after 10 minutes?</p>
+        <p>\(F=\) total change in amount of fuel oil</p>
+        <p>\(\begin{align}dF &= r(t)dt \\ &= 150-0.9tdt\end{align}\)</p>
+        <p>\(\begin{align}F &= \int_0^{10}150-0.9tdt \\ &= 150t-0.45t^2\bigg{\vert}_0^{10} \\ &= 150(10)-0.45(10)^2-150(0)+0.45(0)^2 \\ &= 1500-45 \\ &= 1455\end{align}\)</p>
+        <p class="bold">After 10 minutes, there is <span class="italic">a total</span> of 1455 gallons of fuel oil in the tank.</p>
+
+        <h2>Accumulation Functions</h2>
+        <p>When we looked at <a href="FTC2.html">FTC Part 2</a>, we defined a function in terms of an integral: $$F(x)=\int_a^xf(t)dt$$</p>
+        <p>These functions are called <span class="bold">accumulation functions</span>.</p>
+        <p>While often these can simply be thought of as "the area under the function between \(a\) and \(x\), they apply to a wide variety of problems. We see them used in rate problems all the time when we combine this understanding of the function with the Net Change Theorem. $$F(x)=F(a)+\int_a^xF'(t)dt$$</p>
+
+        <h3>Example</h3>
+        <ol class="practice">
+            <li>A water tank at the local pool has 120 gallons of water in it. Water is pumped into the pool at the rate of \(R(t)=1500e^{-\frac{t^2}{20}}\) gallons per minute.</li>
+            <ol class="alpha">
+                <li>At what rate is water entering the tank after 5 minutes?</li>
+                <p>\(\begin{align}R(5) &= 1500e^{-\frac{(5)^2}{20}} \\ &= 429.757\end{align}\)</p>
+                <p class="bold">After 5 minutes, water enters the tank at a rate of approximately 430 gallons per minute.</p>
+                <li>How much water is in the tank after 5 hours?</li>
+                <p>\(W=\) amount of water in the tank (initial + change)</p>
+                <p>\(P=\) amount added to the tank</p>
+                <p>\(dP=R(t)dt\)</p>
+                <p>\(\begin{align}W &= 120+dP \\ &= 120+\int_0^{300}1500e^{-\frac{t^2}{20}}dt \\ &= 6064.991\end{align}\)</p>
+                <p class="bold">The total amount of water in the tank after 5 hours is approximately 6,065 gallons.</p>
+                <li>Write a function \(W(t)\) for the total number of gallons of water in the pool at time \(t\).</li>
+                <p>\(W(t)=120+\int_0^t1500e^{-\frac{x^2}{20}}dx\)</p>
+            </ol>
+        </ol>
+
+        <h2>Other Applications</h2>
+        <p>Accumulation is just one application of net change using integrals. The same principle can be applied to ideas like:</p>
+        <ul>
+            <li>Net Change Problems</li>
+            <li>Area Between Curves</li>
+            <li>Volume of Solids</li>
+            <li>Arc Length</li>
+            <li>Surface Area</li>
+            <li>Length of Polar Curves</li>
+            <li>Area of Polar Curves</li>
+            <li>Motion in One Direction</li>
+            <li>Motion in Two Dimensions</li>
+            <li>Torque</li>
+            <li>Moment</li>
+            <li>Center of Mass</li>
+            <li>Center of Pressure</li>
+            <li>Probability</li>
+        </ul>
+    </body>
+</html>

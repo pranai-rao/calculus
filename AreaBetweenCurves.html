@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Area Between Curves</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="AverageValue.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="">Next</a></div>
+        </div>
+        <h1>Area Between Curves</h1>
+        <p>Until now, we've looked at the area between the x-axis and the curve. Now, we will find the area between two or more curves.</p>
+        <h2>A (Very) Short Review of Riemann Sums</h2>
+        <p>Recall that if \(f\) is continuous and nonnegative on \([a,b]\), then the definite integral for the area \(A\) under \(y=f(x)\) over the interval \([a,b]\) is obtained by four steps:</p>
+        <ul>
+            <li>Divide the interval into subintervals and use those subintervals to divide the region into vertical strips.</li>
+            <li>Approximate the area of each strip by using the area of a rectangle formula: \(f(x_k^*)\Delta x_k\).</li>
+            <li>Add the approximate areas of the strips to approximate the entire area \(A\) by the Riemann sum $$A\approx\sum_{k=1}^nf(x_k^*)\Delta x_k$$</li>
+            <li>Take the limit as the number of subintervals increases (so the widths of the rectangles go to zero). This causes the error in the approximation to approach zero and produces the definite integral: $$A=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x_k=\int_a^bf(x)dx$$</li>
+        </ul>
+        <p>But how do you find the area between two curves?</p>
+        <img src="img/ABC1.png" height="250">
+        <p>Recall the concept of <a href="">net signed area</a>.</p>
+    </body>
+</html>

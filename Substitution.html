@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Substitution Method</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="FTC2.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="IBP1.html">Next</a></div>
+        </div>
+        <h1>Substitution Method</h1>
+        <p>CAS programs (and the TI-89) can evaluate extremely complicated integrals. Prior to CAS, tables were used.</p>
+        <p>Transformation methods are methods for converting unfamiliar integrals into familiar integrals.</p>
+        <p>For example: $$\int f(x)dx=F(x)+C$$ $$\int x^3dx=\frac{1}{4}x^4+C$$</p>
+        <p>But problems like \(\int xe^{x^2}dx\) and \(\int\sin(x)\cos(x)dx\) or \(\int\frac{2x+3}{x^2-3x+4}dx\) or \(\int x^2\sin(x)dx\) cannot be solved with previously used methods.</p>
+
+        <h2>Substitution Method</h2>
+        <p>Motivated by the chain rule from the viewpoint of antidifferentiation, let \(F\) be an antiderivative of \(f\) and let \(g\) be a differentiable function.</p>
+        <p>Chain rule: 
+            $$\begin{align}\frac{d}{dx}[F(g(x))] &= F'(g(x))g'(x) \\
+            \int F'(g(x))g'(x)dx &= F(g(x))+C \\
+            \int f(g(x))g'(x)dx &= F(g(x))+C\end{align}$$
+        </p>
+        <p>Let \(u=g(x)\). Then \(\frac{du}{dx}=g'(x)\). If we write this in differential form, \(du=g'(x)dx\).</p>
+        <p>If you rewrite the indefinite integral with \(u\): $$\int f(u)du=F(u)+C$$</p>
+        <p>The focus is not on the interpretation of \(du=g'(x)\); this is just useful book-keeping</p>
+
+        <h3>Example</h3>
+        <ol>
+            <li>Evaluate \(\int(x^2+1)^{50}\)</li>
+            <p>\(u=x^2+1\)</p>
+            <p>\(du=2xdx\)</p>
+            <p>$$\int u^{50}du$$ $$\frac{1}{51}u^{51}+C$$ $$\frac{1}{51}(x^2+1)^{51}+C$$</p>
+        </ol>
+
+        <h2>Guidelines for Substitution</h2>
+        <ol>
+            <li>Look for a product of a composition of functions \(f(g(x))\) along with a derivative of the inner function.</li>
+            <ul>
+                <li>Rewrite by substituting</li>
+                <li>Set \(u=g(x)\) and \(du=g'(x)dx\)</li>
+            </ul>
+            <li>If successful, then try to evaluate the resulting integration in terms of \(u\).</li>
+            <li>If successful, then replace \(u\) with \(g(x)\).</li>
+        </ol>
+
+        <h2>Examples</h2>
+        <ol>
+            <li>Evaluate \(\int\sin(5x-2)dx\)</li>
+            <p>\(u=5x-2\)</p>
+            <p>\(du=5dx\to dx=\frac{1}{5}du\)</p>
+            <p>$$\int\sin(u)\cdot\frac{1}{5}du$$ $$-\frac{1}{5}\cos(u)+C$$ $$-\frac{1}{5}\cos(5x-2)+C$$</p>
+            <li>Evaluate \(\int\frac{1}{(\frac{1}{3}x-8)^5}dx\)</li>
+            <p>\(u=\frac{1}{3}x-8\)</p>
+            <p>\(du=\frac{1}{3}dx \to dx=3du\)</p>
+            <p>$$\int\frac{1}{u^5}\cdot 3du$$</p>
+            <p>$$\int3u^{-5}du$$</p>
+            <p>$$-\frac{3}{4}u^{-4}+C$$</p>
+            <p>$$-\frac{3}{4}(\frac{1}{3}x-8)^{-4}+C$$</p>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>An Overview of the Area Problem</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="index.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="Antidifferentiation.html">Next</a></div>
+        </div>
+        <h1>An Overview of the Area Problem</h1>
+        <p>Differential calculus is about the slope problem.</p>
+        <p>The formula for the area of polygons have been well known, but curved shapes, for instance circles, have always been difficult to find.</p> 
+        <p>Archimedes determined that the area of regions bounded by circular arcs (e.g., parabolas, arcs, and curves) can be found by a process later called the method of exhaustion.</p>
+        
+        <h2>Method of Exhaustion</h2>
+        <p>When applied to circles, a succession of regular polygons are inscribed in the circle, allowing the number of sides to increase indefinitely.</p>
+        <p>As the number of sides increase, area inside the circle becomes exhausted. Accordingly, the area of the polygon becomes an increasingly better approximation of the circle.</p>
+        <p>\(A(n)\) represents the area of an n-sided polygon inscribed in a circle with a radius of 1. As n increases. \(A(n)\) resembles \(\pi\)</p>
+        <p>Thus, for a circle of \(r=1\): $$\lim_{n\to\infty}A(n)=\pi$$</p>
+        <p>Because Greek mathematicians did not trust the concept of infinity, the method of exhaustion was a very difficult process until Newton and Leibniz that a general idea using limits was created.</p>
+        
+        <h2>The Area Problem</h2>
+        <p>Given a function \(f\) that is continuous and nonnegative on an interval \([a, b]\), find the area between the graph of \(f\) and the interval \([a, b]\) on the x-axis</p>
+
+        <h2>The Rectangle Method</h2>
+        <p>Applying Archimedes' method of exhaustion:</p>
+        <p>Divide the interval \([a, b]\) into \(n\) equal subintervals. In each subinterval construct a rectangle that extends from the x-axis to any point on the curve that is above the subinterval.</p>
+        <p>For each \(n\), the total area of the rectangles can be viewed as an approximation of the exact area under the curve over the interval \([a, b]\). As \(n\) increases, the approximation will improve.</p>
+
+        <h2>The Antiderivative Method</h2>
+        <p>Though the rectangle method is intuitive, limits that result can only be evaluated sometimes.</p>
+
+        <p>In the late 17th century, Newton and Leibniz independently discovered a relationship between area and derivatives.</p>
+        <p>If \(f\) is a nonnegative continuous function on \([a, b]\), and if \(A(x)\) denotes the area underneath the graph of \(f\) over the interval \([a,x]\), where \(x\) is any point in the interval \([a, b]\), then: $$A'(x)=f(x)$$</p>
+        <p>The antiderivative method is the more efficient method of computing the area under a curve, but it is the rectangle method that is used to formally define the notion of area, allowing us to prove mathematical results. The rectangle method can also be applied to a broader range of problems such as the volume of a solid, length of a curve, etc..</p>
+        <br>
+        <em>Notes:</em>
+        <p>Area of a rectangle: \(A=bh\)</p>
+        <p>Area of a triangle: \(A=\frac{1}{2}bh\)</p>
+        <p>Area of a trapezoid: \(A=\frac{1}{2}h(b_1+b_2)\)</p>
+    </body>
+</html>

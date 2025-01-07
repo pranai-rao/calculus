@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FTC Part 1</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="DefiniteIntegrals.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="MVT.html">Next</a></div>
+        </div>
+        <h1>Fundamental Theorem of Calculus, Part 1</h1>
+        <p>If \(f\) is continuous on and nonnegative on \([a,b]\), the are under the graph can be represented by \(A=\int_a^bf(x)dx\).</p>
+        <img src="img/Aab.png" height="300">
+        <p>Antiderivative Method: If \(A\) is the are under the curve from \(a\) to \(x\) then \(A'(x)=f(x)\).</p>
+        <ul class="double">
+            <li>\(A(a)=\int_a^af(x)dx=0\)</li>
+            <li>\(A(b)=\int_a^bf(x)dx=A\)</li>
+        </ul>
+        <p>If \(A(x)\) is an antiderivative of \(f(x)\), then every other antiderivative of \(f(x)\) on \([a,b]\) can be obtained by adding a constant to \(A(x)\).</p>
+        <p>Let $$F(x)=A(x)+C$$ be any antiderivative of \(f(x)\) and consider what happens when we subtract \(F(a)\) from \(F(b)\):</p>
+        <p>$$\begin{aligned}F(b)-F(a)&=[A(b)+C]-[A(a)+C] \\ &=A(b)+C-A(a)-C \\ &=A(b)-A(a) \\ &=A-0 \\ &=A \\ &=\int_a^bf(x)dx\end{aligned}$$</p>
+        <p>This is a method to evaluate definite integrals using these antiderivatives. Since definite integrals are the limit of a Riemann sum, we don't actually need to take the limit. Instead, we can use these antiderivatives as a way to evaluate definite integrals and calculate exact values for the area under the curve.</p>
+
+        <h2>FTC Part 1</h2>
+        <p>If \(f\) is continuous on \([a,b]\) and \(F\) is any antiderivative of \(f\) on \([a,b]\), then $$\int_a^bf(x)dx=F(b)-F(a)$$</p>
+
+        <h2>Notation (Steps)</h2>
+        <p>$$\int_a^bf(x)dx$$</p>
+        <p>$$F(x) \bigg\vert_a^b$$</p>
+        <p>$$F(b)-F(a)$$</p>
+        <p class="center">Evaluate and end up with a number.</p>
+
+        <h3>Example</h3>
+        <p>Evaluate \(\int_1^9\sqrt{x}dx\)</p>
+        <p>$$\int_1^9\sqrt{x}dx$$</p>
+        <p>$$\frac{2}{3}x^\frac{3}{2}\bigg\vert_1^9$$</p>
+        <p>$$\frac{2}{3}(9)^\frac{3}{2}-\frac{2}{3}(1)^\frac{3}{2}$$</p>
+        <p>$$\frac{52}{3}$$</p>
+
+        <h2>Dummy Variables</h2>
+        <p>To evaluate an integral using the FTC Part 1, we need to be able to find the antiderivative of the integrand. Thus, it is essential to know what kinds of functions have antiderivatives.</p>
+        <p>We know there is a close relationship between \(\int_a^bf(x)dx\) and \(\int f(x)dx\).</p>
+        <p>However, definite integrals and indefinite integrals differ in two important ways.</p>
+        <ol>
+            <li>The two types of integrals different types of objects</li>
+            <ul>
+                <li>Definite integrals produce a number</li>
+                <li>Indefinite integrals produce a function (a family of functions)</li>
+            </ul>
+            <li>They differ in the role played by the differential (\(dx\))</li>
+            <ul>
+                <li>Definite: The differential is not passed through since the result is a number</li>
+                <li>Indefinite: The differential is passed through to the antiderivative in the sense that integrating a function of \(x\) produces a function of \(x\) etc.</li>
+            </ul>
+        </ol>
+        <p>For example: \(\int x^2dx=\frac{1}{3}x^3+C\) and \(\int t^2dx=\frac{1}{3}t^3+C\) but \(A=\int_a^bf(x)dx=\int_a^bf(t)dt\)</p>
+        <p>Because the value of integration in a definite integral plays no role in the result, it is often referred to as a dummy variable.</p>
+        <p>Key result: You can change the differential without changing the result. <span style="font-weight: bold;text-decoration: underline;">But</span> you should have the same variable for the integrand and the differential.</p>
+        <table>
+            <tr>
+                <th>Good</th>
+                <th>Bad</th>
+            </tr>
+            <tr>
+                <td>\(\int_1^3x^2dx\)</td>
+                <td>\(\int_1^3x^2dt\)</td>
+            </tr>
+            <tr>
+                <td>\(\int_{-1}^7t^2dt\)</td>
+                <td>\(\int_{-5}^12u^\frac{5}{2}dx\)</td>
+            </tr>
+            <tr>
+                <td>\(\int_\pi^5\sin(\theta)d\theta\)</td>
+                <td>\(\int_\pi^7\cos^2(\theta)du\)</td>
+            </tr>
+        </table>
+
+        <h2>Practice Problems</h2>
+        <p>Evaluate the integrals</p>
+        <ol class="practice">
+            <li>\(\int_1^2x^3dx\)</li>
+            <li>\(\int_0^1x^2-e^x+\sqrt{x}dx\)</li>
+        </ol>
+    </body>
+</html>

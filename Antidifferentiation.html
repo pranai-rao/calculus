@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Antidifferentiation</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="AreaProblem.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="PropertiesOfIntegrals.html">Next</a></div>
+        </div>
+        <h1>Antidifferentiation</h1>
+        <p>A function \(F\) is called an antiderivative of a function \(f\) on a given open interval if \(F'(x)=f(x)\) for all \(x\) in the interval.</p>
+        <p>For example, \(F(x)=\frac{1}{3}x^3\) is the antiderivative of \(f(x)=x^2\) on the interval \((-\infty, \infty)\).</p>
+        <p>Note that &nbsp; \(F(x)=\frac{1}{3}x^3+7\), &nbsp;\(F(x)=\frac{1}{3}x^3-2.4\), &nbsp;and &nbsp;\(F(x)=\frac{1}{3}x^3+\pi\)&nbsp; are all antiderivatives of \(f(x)\).</p>
+        <p>Note that &nbsp;\(F(x)=\frac{1}{3}x^3+x\) is <span style="text-decoration: underline; font-weight: bold;">NOT</span> an antiderivative of \(f(x)\).</p>
+        <p>If \(F(x)\) is any antiderivative of \(f(x)\) on an open interval, then for any constant \(C\), the function \(F(x)+C\) is also an antiderivative on that interval. Moreover, each antiderivative of \(f(x)\) on the interval can be expressed in the form \(F(x)+C\) by choosing the constant \(C\) appropriately.</p>
+
+        <h2>The Indefinite Integral</h2>
+        <p>The process of finding antiderivatives is called antidifferentiation or integration.</p>
+        <p>Thus, if \(\frac{d}{dx}F(x)=f(x)\), then integrating \(f(x)\) produces the form of \(F(x)+C\).</p>
+        <p>To emphasize this process, we rewrite the relationship using integral notation: $$\int f(x)dx=F(x)+C$$</p>
+        <p>Notation: \(\int\) is the integral sign, \(f(x)\) is the integrand, \(dx\) is the differential (i.e., variable of integration), \(F(x)\) is the antiderivative, and \(C\) is the constant.</p>
+        <p>\(\int x^2dx=\frac{1}{3}x^3+C\) is equivalent to \(\frac{d}{dx}[\frac{1}{3}x^3]=x^2\)</p>
+        <p>One way to think about it is that integration and derivatives are inverse operations: \(\frac{d}{dx}[]\) and \(\int[]dx\)</p>
+        <p>The symbol "\(dx\)" serves to represent the independent variable. If the variable is \(t\), it should be \(\frac{d}{dt}\) and \(dt\) respectively.</p>
+        <br>
+        <p>Examples:</p>
+        <table>
+            <tr>
+                <th>Derivative Formula</th>
+                <th>Equivalent Integration Formula</th>
+            </tr>
+            <tr>
+                <td>\(\frac{d}{dx}[x^3]=3x^2\)</td>
+                <td>\(\int [3x^2]dx=x^3+C\)</td>
+            </tr>
+            <tr>
+                <td>\(\frac{d}{dx}[\sqrt{x}]=-\frac{1}{2}x^{-\frac{1}{2}}\)</td>
+                <td>\(\int[-\frac{1}{2}x^{-\frac{1}{2}}]dx=\sqrt{x}+C\)</td>
+            </tr>
+            <tr>
+                <td>\(\frac{d}{d\theta}[\tan(\theta)]=\sec^2(\theta)\)</td>
+                <td>\(\int[\sec^2(\theta)]d\theta=\tan(\theta)+C\)</td>
+            </tr>
+            <tr>
+                <td>\(\frac{d}{dt}[t^{\frac{3}{2}}]=\frac{3}{2}t^{\frac{1}{2}}\)</td>
+                <td>\(\int[\frac{3}{2}t^{\frac{1}{2}}]dt=t^{\frac{3}{2}}+C\)</td>
+            </tr>
+        </table>
+        <h2>Finding Antiderivatives</h2>
+        <p>Integration is educated guesswork. For example: $$\frac{d}{dx}\sin(x)=\cos(x)\therefore \int\sin(x)dx=\sin(x)+C$$</p>
+        <p>Watch for negatives! $$\frac{d}{dx}\cos(x)=-\sin(x)$$$$\int\sin(x)dx=-\cos(x)+C$$</p>
+
+        <h2>Practice Problems</h2>
+        <ol class="practice">
+            <li>Find the indefinite integrals.</li>
+            <ol class="alpha">
+                <li>\(\int x^5dx\)</li>
+                <li>\(\int e^xdx\)</li>
+                <li>\(\int\sec^2(x)dx\)</li>
+            </ol>
+        </ol>
+    </body>
+</html>

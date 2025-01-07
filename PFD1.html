@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Partial Fraction Decomposition 1</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="PowerOfTrig.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="PFD2.html">Next</a></div>
+        </div>
+        <h1>Partial Fraction Decomposition, Part 1</h1>
+        <p>We know the Sum and Difference Rule of integration, and the use of substitution and integration by parts to find the integral of products. But what about quotients of polynomials, of rational functions, with polynomials in the numerator and denominator? To find the integrals of those functions, we will use a method called partial fraction decomposition.</p>
+        <p>But first, we need to understand some basic problems. We know that \(\int\frac{1}{x}dx=\ln|x|+C\). Using substitution, we can handle addition or subtraction in the denominator, and using the <a href="PropertiesOfIntegrals.html">Constant Multiple Rule</a>, we can handle constants in the numerator.</p>
+        <h3>Example</h3>
+        <ol class="practice">
+            <li>Integrate \(\int\frac{1}{x}dx\)</li>
+            <p>\(\ln|x|+C\)</p>
+            <li>Integrate \(\int\frac{1}{x-4}dx\)</li>
+            <p>\(\begin{align}u &= x-4 \\ du &= dx\end{align}\)</p>
+            <p>\(\int\frac{1}{u}du\)</p>
+            <p>\(\ln|u|+C\)</p>
+            <p>\(\ln|x-4|+C\)</p>
+            <li>Integrate \(\int\frac{2}{x-4}dx\)</li>
+            <p>\(2\ln|x-4|+C\)</p>
+            <li>Integrate \(\int\frac{2}{x-4}+\frac{3}{x+2}dx\)</li>
+            <p>\(2\ln|x-4|+3\ln|x+2|+C\)</p>
+        </ol>
+
+        <h2>Polynomials in Rational Functions</h2>
+        <p>But what about problems like \(\int\frac{5x-10}{x^2-3x-4}dx\)? Because the numerator is no longer a constant, the Constant Multiple Rule cannot be applied. Additionally, the denominator is a binomial, so the idea of using the natural logarithm, which requires a linear factor, cannot be applied.</p>
+        <p>Note that factoring does not help in this situation: \(\frac{5x-10}{x^2-3x-4}=\frac{5(x-2)}{(x-4)(x+1)}\).</p>
+        <br>
+        <p>Recall fraction addition. To add fractions with an uncommon denominator, you would need to find a common denominator by multiplying the numerator and denominator by the missing factor.</p>
+        <p>
+            $$\begin{align}\frac{2}{x-4}+\frac{3}{x+1} &= \frac{2(x+1)}{(x-4)(x+1)}+\frac{3(x-4)}{(x-4)(x+1)} \\
+            &= \frac{2(x+1)+3(x-4)}{(x-4)(x+1)} \\
+            &=\frac{5x-10}{x^2-3x-4}\end{align}$$
+        </p>
+        <p>Note that even though the final expression cannot be easily integrated, the initial expression \(\frac{2}{x-4}+\frac{3}{x+1}\) can.</p>
+        <p>Since \(\int\frac{5x-10}{x^2-3x-4}dx=\int\frac{2}{x-4}+\frac{3}{x+1}dx\), to integrate this type of rational function, it is essential to find two fractions that sum to the original rational function. This can be done through partial fraction decomposition (PFD).</p>
+
+        <h2>PFD Process</h2>
+        <p>Let's say we want to integrate \(\int\frac{5x-10}{x^2-3x-4}dx\).</p>
+        <ol>
+            <li class="bold">Factor the denominator</li>
+            <p>$$x^2-3x-4=(x-4)(x+1)$$</p>
+            <p>These factors will be the denominator of the "decomposition."</p>
+            <p>When factoring a polynomial, it does not always break down into linear factors. However, we will only look at non-repeated linear factors.</p>
+
+            <li class="bold">Set up an equation with the national expression on one side and the "base" fractions on the other</li>
+            <p>$$\frac{5x-10}{x^2-3x-4}=\frac{}{x-4}+\frac{}{x+1}$$</p>
+
+            <li class="bold">Solve for \(A\) and \(B\)</li>
+            <p>Recall the algebraic method of "clearing fractions." (Hint: multiply by the common denominator).</p>
+            <p>
+                $$\begin{align}\frac{5x-10}{x^2-3x-4} &= \frac{A}{x-4}+\frac{B}{x+1} \\
+                5x-10 &= A(x+1)+B(x-4) \\
+                &= Ax+A+Bx-4B \\
+                &= (A+B)x+(A-4B)\end{align}$$
+            </p>
+            <p>Thus we can form a system of equations:</p>
+            <p>$$\begin{cases}A+B = 5 \\ A-4B = -10\end{cases}$$</p>
+            <p>$$\begin{align}4A+4B &= 20 \\ (4A+4B)+(A-4B) &= 20-10 \\ 5A &= 10 \\ A &= 2 \\ (2)+B &= 5 \\ B &= 3\end{align}$$</p>
+            <p>$$\begin{align}A &= 2 \\ B &= 3\end{align}$$</p>
+
+            <li class="bold">Plug \(A\) and \(B\) into the "base" fractions</li>
+            <p>$$\frac{5x-10}{x^2-3x-4}=\frac{2}{x-4}+\frac{3}{x+1}$$</p>
+        </ol>
+        <p>Now, we can return to the original problem and integrate using the decomposed fractions.</p>
+
+        <h3>Example</h3>
+        <ol class="practice">
+            <li>Integrate \(\int\frac{11x^2-22x-13}{x^3-2x^2-5x+6}dx\)</li>
+            <p>\(x^3-2x^2-5x+6=(x-3)(x-1)(x+2)\)</p>
+            <p>
+                $$\begin{align}\frac{11x^2-22x-13}{x^3-2x^2-5x+6} &= \frac{A}{x-3}+\frac{B}{x-1}+\frac{C}{x+2} \\
+                11x^2-22x-13 &= A(x-1)(x+2)+B(x-3)(x+2)+C(x-3)(x-1) \\
+                &= A(x^2+x-2)+B(x^2-x-6)+C(x^2-4x+3) \\
+                &= Ax^2+Ax-2A+Bx^2-Bx-6B+Cx^2-4Cx+3C \\
+                11x^2-22x-13 &= (A+B+C)x^2+(A-B-4C)x+(-2A-6B+3C)\end{align}$$
+            </p>
+            <p>$$\begin{cases}A+B+C=11 \\ A-B-4C=-22 \\ -2A-6B+3C=-13\end{cases}$$</p>
+            <p>Using any method of solving systems of equations, solve for \(A\), \(B\), and \(C\):</p>
+            <p>$$\begin{align}A &= 2 \\ B &= 4 \\ C &= 5\end{align}$$</p>
+            <p>$$\int\frac{2}{x-3}+\frac{4}{x-1}+\frac{5}{x+2}dx$$</p>
+            <p>$$2\ln|x-3|+4\ln|x-1|+5\ln|x+2|+C$$</p>
+        </ol>
+
+        <h2>Key Things to Remember</h2>
+        <ul>
+            <li>Once you have found \(A\) and \(B\), be sure to put them over the correct denominator!</li>
+            <li>When \(A\) and \(B\) are fractions, put the entire fraction in the numerator—this will be your constant in front of the natural logarithm when you integrate.</li>
+            <li>Make sure you include the absolute value symbols when integrating the partial fractions.</li>
+            <li>There are some cases in which the method of PFD is inappropriate:</li>
+            <ul>
+                <li>We can integrate \(\int\frac{3x^2+2}{x^3+2x-8}dx\) more directly by using substitution using \(u=x^3+2x-8\).</li>
+                <li>We can integrate \(\int\frac{2x-1}{x^2+1}dx\) more directly by splitting it into two integrals: \(\int\frac{2x}{x^2+1}-\frac{1}{x^2+1}dx\)</li>
+            </ul>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Partial Fraction Decomposition 2</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="PFD1.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="ImproperIntegrals.html">Next</a></div>
+        </div>
+        <h1>Partial Fraction Decomposition, Part 2</h1>
+        <p>In the <a href="PFD1.html">previous section</a>, we left off with the problem \(\int\frac{11x^2-22x-13}{x^3-2x^2-5x+6}dx\). This was challenging—not because the process was more difficult, but—because the initial factoring required more work. There is, however, a shorter way in some cases. In the same way that <a href="IBP2.html">Tabular IbP</a> condensed the work needed to integrate functions, we can shorten the work to find \(A\), \(B\), and \(C\).</p>
+
+        <h2>Heavyside Method</h2>
+        <p>The Heavyside Method is a shortcut to finding the partial fractions for a rational function.</p>
+        <p>But there are some restructions:</p>
+        <ul>
+            <li>The denominator must factor into non-repeated linear factors.</li>
+            <li>The degree of the numerator must be only one less than the degree of the denominator.</li>
+        </ul>
+
+        <h3>Process</h3>
+        <p>Start with the same step as before: $$\frac{11x^2-22x-13}{x^3-2x^2-5x+6}=\frac{A}{x+2}+\frac{B}{x-1}+\frac{C}{x-3}$$</p>
+        <p>Next, make three columns—one for each of the constants to solve for. Note that there is a box (a placeholder) everywhere that \(x\) appears, except for the factor that appears below the constant in the earlier step.</p>
+        <div class="flexcol">
+            <div>
+                <p>$$A$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{(x+2)(\fbox{&#12644;}-1)(\fbox{&#12644;}-3)}$$</p>
+            </div>
+            <div>
+                <p>$$B$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{(\fbox{&#12644;}+2)(x-1)(\fbox{&#12644;}-3)}$$</p>
+            </div>
+            <div>
+                <p>$$C$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{(\fbox{&#12644;}+2)(\fbox{&#12644;}-1)(x-3)}$$</p>
+            </div>
+        </div>
+        <p>Next, we are going to ignore the factor that is under the constant in the PFD.</p>
+        <div class="flexcol">
+            <div>
+                <p>$$A$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{\xcancel{(x+2)}(\fbox{&#12644;}-1)(\fbox{&#12644;}-3)}$$</p>
+            </div>
+            <div>
+                <p>$$B$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{(\fbox{&#12644;}+2)\xcancel{(x-1)}(\fbox{&#12644;}-3)}$$</p>
+            </div>
+            <div>
+                <p>$$C$$</p>
+                <p>$$\frac{11\fbox{&#12644;}^2-22\fbox{&#12644;}-13}{(\fbox{&#12644;}+2)(\fbox{&#12644;}-1)\xcancel{(x-3)}}$$</p>
+            </div>
+        </div>
+        <p>Now, in the boxes, we are going to put the number that makes the "ignored factor" zero.</p>
+        <div class="flexcol">
+            <div>
+                <p>$$A$$</p>
+                <p>$$\frac{11(-2)^2-22(-2)-13}{\xcancel{(x+2)}((-2)-1)((-2)-3)}$$</p>
+                <p>$$\frac{11(4)+44-13}{(-3)(-5)}$$</p>
+                <p>$$\frac{75}{15}$$</p>
+                <p>$$5$$</p>
+            </div>
+            <div>
+                <p>$$B$$</p>
+                <p>$$\frac{11(1)^2-22(1)-13}{((1)+2)\xcancel{(x-1)}((1)-3)}$$</p>
+                <p>$$\frac{11-22-13}{(3)(-2)}$$</p>
+                <p>$$\frac{-24}{-6}$$</p>
+                <p>$$4$$</p>
+            </div>
+            <div>
+                <p>$$C$$</p>
+                <p>$$\frac{11(3)^2-22(3)-13}{((3)+2)((3)-1)\xcancel{(x-3)}}$$</p>
+                <p>$$\frac{99-66-13}{(5)(2)}$$</p>
+                <p>$$\frac{20}{10}$$</p>
+                <p>$$2$$</p>
+            </div>
+        </div>
+        <p>After solving for \(A\), \(B\), and \(C\), we can continue the normal process of <a href="PFD1.html">PFD</a>.</p>
+        <h2>Improper Rational Functions</h2>
+        <p>So far, the degree in the denominator has been larger than the degree of the numerator. But what if the degree of the numerator is larger than the degree of the denominator, or if the degrees are the same? These types of functions are called improper rational functions.</p>
+        <p>To integrate an improper rational function like \(\int\frac{3x^4+3x^3-5x^2+x-1}{x^2+x-2}dx\), we need to use polynomial long division first.</p>
+        <a href="img/polynom.png" target="_blank"><img src="img/polynom.png" width="350"></a>
+        <p>So \(\frac{3x^4+3x^3-5x^2+x-1}{x^2+x-2}=3x^2+1+\frac{1}{x^2+x-2}\). Now we can integrate with the help of PFD. (PFD work not shown).</p>
+        <p>
+            $$\begin{align} \int \frac{3x^4+3x^3-5x^2+x-1}{x^2+x-2}dx &= \int3x^2+1+\frac{1}{x^2+x-2}dx \\
+            &= \int(3x^2+1)dx+\int\frac{1}{x^2+x-2}dx \\
+            &=\int(3x^2+1)dx+\int\frac{\frac{1}{3}}{x-1}-\frac{\frac{1}{3}}{x+2} \\
+            &= x^3+x+\frac{1}{3}\ln|x-1|-\frac{1}{3}\ln|x+2|+C\end{align}$$
+        </p>
+    </body>
+</html>

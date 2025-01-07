@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Improper Integrals</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="PFD2.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="NetChange.html">Next</a></div>
+        </div>
+        <h1>Improper Integrals</h1>
+        <p>Until now, we have "assumed" that in the definition of our definite integral $$\int_a^bf(x)dx$$ that \([a,b]\) is a finite interval and that the limit that defines the integral exists.</p>
+        <p>On the other hand, improper integrals extend the concept of definite integrals to allow infinite intervals of integration and integrands with vertical asymptotes within the interval of integration.</p>
+        
+        <h3>Examples of Improper Integrals</h3>
+        <ul>
+            <li>Improper integrals with infinite intervals of integration</li>
+            <div class="flexcol">
+                <div>
+                    <p>$$\int_1^\infty\frac{1}{x^2}dx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_{-\infty}^0e^xdx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_{-\infty}^\infty\frac{1}{x^2+1}dx$$</p>
+                </div>
+            </div>
+
+            <li>Improper integrals with infinite discontinuities in the interval of integration</li>
+            <div class="flexcol">
+                <div>
+                    <p>$$\int_{-3}^3\frac{1}{x^2}dx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_1^2\frac{1}{x-1}dx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_0^\pi\tan(x)dx$$</p>
+                </div>
+
+            </div>
+
+            <li>Improper integrals with infinite discontinuities and infinite intervals of integration</li>
+            <div class="flexcol">
+                <div>
+                    <p>$$\int_0^\infty\frac{1}{\sqrt{x}}dx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_{-\infty}^\infty\frac{1}{x^2-9}dx$$</p>
+                </div>
+                <div>
+                    <p>$$\int_1^\infty\sec(x)dx$$</p>
+                </div>
+            </div>
+        </ul>
+
+        <h2>Integrals Over Infinite Intervals</h2>
+        <p>Let's begin with the case where \(f\) is continuous and nonnegative on \([a,\infty)\). With this we can think of \(\int_a^\infty f(x)dx\) as the area under the curve \(y=f(x)\) over the interval \([a,\infty)\):</p>
+        <img src="img/impint1.png" height="300">
+        <p>At first, we might argue that this area is infinite because the region is infinite. However, this understanding is based on vague intuition rather than precise mathematical logic since this concept of area has <span class="bold">only</span> been defined over intervals of <span class="italic">finite extent</span>.</p>
+        <p>So, before we can make any reasonable statements, we need to define what we mean by the area of this region. To do this, we will focus on one illustrative example to help us see the general picture.</p>
+        <br>
+        <p>Suppose we are interested in the area \(A\) of the region that lies below the curve \(y=\frac{1}{x^2}\) and above the interval \([1,\infty)\).</p>
+        <p>Instead of trying to find the entire area at once, let's begin by calculating the portion of the area that lies above a finit interval \([1,b]\):</p>
+        <p>
+            $$\begin{align}\int_1^b\frac{1}{x^2}dx &= -\frac{1}{x}\bigg{\vert}_1^b \\ 
+            &= -\frac{1}{b}+\frac{1}{1} \\ 
+            &= 1-\frac{1}{b}\end{align}$$
+        </p>
+        <img src="img/impint2.png" height="300">
+        <p>If we now allow \(b\) to increase so \(b\to\infty\), then the portion fo the area over the interval \([1,b]\) will begin to fill out the area over the entire interval.</p>
+        <p>Hence, we can reasonably define the area \(A\) under \(y=\frac{1}{x^2}\) over the interval \([1,\infty)\) to be</p>
+        <p>
+            $$\begin{align}A &= \int_1^\infty\frac{1}{x^2}dx \\
+            &= \lim_{b\to\infty}\int_1^b\frac{1}{x^2}dx \\
+            &= \lim_{b\to\infty}(1-\frac{1}{b}) \\
+            &= 1\end{align}$$
+        </p>
+        <img src="img/impint3.png" height="200">
+        <h3>Definitions</h3>
+        <p>The <span class="bi">improper integral of \(f\) over the interval \([a,\infty)\)</span> is defined to be $$\int_a^\infty f(x)dx=\lim_{b\to\infty}\int_a^bf(x)dx$$ In the case where the limit exists, the improper integral is said to <span class="bi">converge</span>, and the value of the intergal is defined to be the value of the limit. In the case where the limit does not exist, the improper integral is said to <span class="bi">diverge</span>, and it is not assigned a value.</p>
+        <br>
+        <p>The <span class="bi">improper integral of \(f\) over the interval \((-\infty,b]\)</span> is defined to be $$\int_{-\infty}^bf(x)dx=\lim_{a\to-\infty}\int_a^bf(x)dx$$ The integral is said to <span class="bi">converge</span> if the limit exists and <span class="bi">diverge</span> if it does not.</p>
+        <br>
+        <p>The <span class="bi">improper integral of \(f\) over the interval \((-\infty,\infty)\)</span> is defined to be $$\int_{-\infty}^\infty f(x)dx=\int_{-\infty}^cf(x)dx+\int_c^\infty f(x)dx$$ Where \(c\) is any real number. The integral is said to <span class="bi">converge</span> if <span class="italic">both</span> terms converge and <span class="bi">diverge</span> if <span class="italic">either</span> term diverges.</p>
+    
+        <h2>Integrals Whose Integrands have Infinite Discontinuities</h2>
+        <p>These integrals either have an infinite discontinuity either at one of the endpoints or at a point on the interior of the interval:</p>
+        <img src="img/impint4.png" height="300">
+        <p>In both cases, we do something similar to what we did in our earlier case: re-write the integral using constants and apply limits.</p>
+
+        <h3>Definitions</h3>
+        <p>If \(f\) is continuous on the interval \([a,b]\), except for an infinite discontinuity at \(b\), then the <span class="bi">improper integral of \(f\) over the interval \([a,b]\)</span> is defined to be $$\int_a^bf(x)dx=\lim_{k/to b^-}\int_a^kf(x)dx$$ In the case where the indicated limit exists, the improper integral is said to <span class="bi">converge</span> and the value of the integral is defined to be the value of the limit. In the case where the limit does not exist, the improper integral is said to <span class="bi">diverge</span> and it is not assigned a value.</p>
+        <br>
+        <p>If \(f\) is conitnuous on the interval \([a,b]\), except for an infinite discontinuity at \(a\), then the <span class="bi">improper integral of \(f\) over the interval \([a,b]\)</span> is defined to be $$\int_a^bf(x)dx=\lim_{k\to a^+}\int_k^bf(x)dx$$ The improper integral is said to <span class="bi">converge</span> if the limit exists, and to <span class="bi">diverge</span> if it does not.</p>
+        <br>
+        <p>If \(f\) is continuous on the interval \([a,b]\), except for an infinite discontinuity at a point \(c\) in \((a,b)\), then the <span class="bi">improper integral of \(f\) over the interval \([a,b]\)</span> is defined to be $$\int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bd(x)dx$$ Where the two integrals on the right side are themselves improper. The improper integral on the left side is said to <span class="bi">converge</span> if <span class="italic">both</span> terms on the right side converge and <span class="bi">diverge</span> if <span class="italic">either</span> term on the right side diverges.</p>
+
+        <h2>Final Notes</h2>
+        <ul>
+            <li>Evaluating imrpoper integrals is not much harder than evaluating a definite integral. It all comes down to simply rewriting them using a constant, finding the correct antiderivative, and then evaluating a limit.</li>
+            <li>While you may be tempted to simply apply the <a href="FTC1.html">FTC</a> directly to the improper integral, this process can often go wrong and lead you to incorrect results.</li>
+        </ul>
+    </body>
+</html>

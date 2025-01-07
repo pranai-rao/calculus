@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Integration by Parts 1</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="Substitution.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="IBP2.html">Next</a></div>
+        </div>
+        <h1>Integration by Parts, Part 1</h1>
+        <p>With the substitution method, we were able to reverse the process of the chain rule.</p>
+        <p>IBP is an antideirvative formulation of the formula for differentiating a product of two functions. In other words, a general method for attacking the form: $$\int f(x)g(x)dx$$</p>
+        <p>Let \(G(x)\) be the derivative of \(g(x)\), where \(G'(x)=g(x)\). The product rule for differentiating \(f(x)G(x)\):</p>
+        <p>$$\begin{align}\frac{d}{dx}[f(x)G(x)] &= f'(x)G(x)+f(x)G'(x) \\ &= f'(x)G(x)+f(x)g(x) \end{align}$$</p>
+        <p>In integral form: \(\int[f(x)g(x)+f'(x)G(x)]dx=f(x)G(x)+C\)</p>
+        <p>Manipulating this integral using known properties:</p>
+        <p>$$\begin{align} \int[f(x)g(x)+f'(x)G(x)]dx &= f(x)G(x) \\
+            \int f(x)g(x)dx+\int f'(x)G(x)dx &= f(x)G(x) \\
+            \int f(x)g(x)dx &= f(x)G(x)-\int f'(x)G(x)dx\end{align}$$
+        </p>
+        <p>This process is called integration by parts.</p>
+
+        <h2>Integration by Parts</h2>
+        <p>In practice, the IbP formula is written:</p>
+        <p>\(\begin{align}u &= f(x) \\ du &= G'(x)dx\\ \end{align}\) \(\begin{align}dv &= G'(x)dx \\ v &= \sin(x)\end{align}\)</p>
+        <p>Thus: $$\int udv=uv-\int vdu$$</p>
+
+        <h2>Guidelines for IbP</h2>
+        <ul>
+            <li>Main goal: Choose \(u\) and \(dv\) to obtain an integral that is easier to find than the first.</li>
+            <li>A strategy that often works is to choose \(u\) and \(dv\) so that \(u\) becomes "simpler" when differentiated, while leaving a \(dv\) that can be readily integrated to obtain \(v\).</li>
+        </ul>
+
+        <h3>Example</h3>
+        <p>Consider \(\int x\cos(x)dx\)</p>
+        <p>\(\begin{align}u &= x \\ du &= dx\end{align}\) \(\begin{align}dv &= -\sin(x)dx \\ v &= \sin(x)\end{align}\)</p>
+
+        <h3>LIATE Strategy</h3>
+        <p>Another useful strategy for choosing \(u\) and \(dv\) can be applied when the integrand is a product of two functions from different categories in the LIATE list.</p>
+        <p class="center">LIATE = Logarithmic, Inverse, Algebraic, Trigonometric, Exponential</p>
+        <p>"LIATE" is a good way to remember the list. Though this does not work all the time, it works enough to be useful.</p>
+
+        <h2>Examples</h2>
+        <ol class="practice">
+            <li>\(\int x\cos(x)dx\)</li>
+            <p>\(\begin{align}u &= x \\ du &= dx\end{align}\) \(\begin{align}dv &= -\cos(x)dx \\ v &= \sin(x)\end{align}\)</p>
+            <p>
+                $$\begin{align}\int udv &= uv-\int vdu \\
+                \int x\cos(x)dx &= x\sin(x)-\int-\sin(x)dx \\
+                &= x\sin(x)+\cos(x) + C\end{align}$$
+            </p>
+            <li>\(\int xe^xdx\)</li>
+            <p>\(\begin{align}u &= x \\ du &= dx\end{align}\) \(\begin{align}dv &= e^xdx \\ v &= e^x\end{align}\)</p>
+            <p>
+                $$\begin{align}\int udv &= uv-\int vdu \\ 
+                \int xe^xdx &= xe^x-\int e^xdx \\
+                &= xe^x-e^x+C\end{align}$$
+            </p>
+        </ol>
+    </body>
+</html>

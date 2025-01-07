@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Numeric Approximation</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="AreaAsALimit.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="DefiniteIntegrals.html">Next</a></div>
+        </div>
+        <h1>Numeric Approximation</h1>
+        <h2>Recangle Approximation Method (RAM)</h2>
+        <div class="flexbox">
+            <div>
+                <div>
+                    <img src="img/lram.png" height="300">
+                </div>
+                <div>
+                    <img src="img/mram.png" height="300">
+                </div>
+                <div>
+                    <img src="img/rram.png" height="300">        
+                </div>    
+            </div>
+            <div>
+                <p>LRAM Diagram</p>
+                <p>MRAM Diagram</p>
+                <p>RRAM Diagram</p>
+            </div>
+        </div>
+        <p>There are three common choices for x-values to determine rectangle height: left and right endpoints, and midpoints of subintervals.</p>
+        <h3>What Rectangle Method Should be Used?</h3>
+        <ul>
+            <li>Left endpoint rectangles tend to under/overestimate based on the curve</li>
+            <li>Right endpoint rectangles also tend to under/overestimate based on the curve</li>
+            <li>Midpoint rectangles tend to make a better estimate than RRAM and LRAM</li>
+        </ul>
+        <h3>Formulas</h3>
+        <p>\(L_n=\Delta x(f(x_1^*)+f(x_2^*)+...+f(x_{n-1}^*)+f(x_n^*))\)</p>
+        <p>\(R_n=\Delta x(f(x_1^*)+f(x_2^*)+...+f(x_{n-1}^*)+f(x_n^*))\)</p>
+        <p>\(M_n=\Delta x(f(x_1^*)+f(x_2^*)+...+f(x_{n-1}^*)+f(x_n^*))\)</p>
+        <h2>Trapezoidal Rule</h2>
+        <p>MRAM often approximates the area under the curve better than LRAM or RRAM, but trapezoids can do it better.</p>
+        <div class="flexbox">
+            <div>
+                <img src="img/trap.png" height="300">
+            </div>
+            <div>Trapezoidal Approximation Example</div>
+        </div>
+        <p>Area of a trapezoid: \(A=\frac{1}{2}(b_1+b_2)\)</p>
+        <p>Area under a curve:</p>
+        <p>$$A=\frac{1}{2}h[(y_0+y_1)+(y_1+y_2)+...+(y_{n-1}+y_n)]$$</p>
+        <p>Like RAM, we will make the height "h" constant across subintervals. So \(h=\frac{b-a}{n}\) where \(n\) is the number of subintervals.</p>
+        <p>$$\begin{aligned} A &=\frac{1}{2}h(y_0+y_1+y_1+y_2+y_2+y_3+...+y_{n-1}+y_n) \\ &=\frac{1}{2}h(y_0+2y_1+2y_2+...+2y_{n-1}+y_n) \end{aligned}$$</p>
+        <p>If the function \(f\) is continuous on \([a, b]\) and if \(f(x)\geq0\) for all \(x\) in \([a, b]\), then the area \(A\) under the curve \(y=f(x)\) over the interval \([a,b]\) can be approximated by: $$A\approx T_n=\frac{1}{2}(\frac{b-a}{n})(y_0+2y_1+...+2y_{n-1}+y_n)$$</p>
+
+        <h2>Simpson's Rule</h2>
+        <p>So far, all approximation methods used lines to approximate the area under a curve. Simpson's Rule uses curves to approximate the area under the curve; specifically, quadratic curves.</p>
+        <p>Area under a parabolic arc from a to b: $$A\approx\frac{1}{3}\Delta x(y_0+4y_1+y_2)$$</p>
+        <p>With more than one parabola: $$\begin{aligned}A &\approx\frac{1}{3}\Delta x(y_0+4y_1+y_2+y_2+4y_2+y_4) \\ &\approx\frac{1}{3}\Delta x(y_0+4y_1+2y_2+4y_3+y_4)\end{aligned}$$</p>
+        <p><span style="font-style: italic;">Note: </span>Coefficients of 2 and 4 alternate.</p>
+        <p>If we continued, the first and last \(y\) would have a coefficient of 1. The \(y\) next to the \(y\) with a coefficient of 1 must have a coefficient of 4. In between the coefficient 4, the coefficient pattern alternates between 4 and 2, <span style="font-weight: bold;">but must work out evenly</span>.</p>
+        <p>There <span style="text-decoration: underline; font-weight: bold;">must</span> be an even number of subintervals.</p>
+
+        <h2>Error</h2>
+        <p>With all these methods, there are two sources of error. First, intrinsic or turncation error (due to the approximation formula). Second, the roundoff error (introduced in calculations).</p>
+        <p>In general, increasing \(n\) decreases truncation error but increases roundoff error.</p>
+        <p>In practical applications, it is important to understand how large \(n\) must be to ensure that a specific degree of accuracy is obtained.</p>
+        <p>Roundoff error is beyond our scope, so we will focus on truncation error. Though the precise error will not be found, we will find the upper bound of error.</p>
+        <h3>Midpoint and Trapezoidal Error Bounds</h3>
+        <p>If \(f''\) is continuous on \([a,b]\) and if \(K_2\) is the maximum value of \(\mid f''(x)\mid\)</p>
+        <ol class="alpha">
+            <li>\(\mid E_m\mid=\mid A-M_n\mid\leq\frac{K_2}{24n^2}\mid b-a\mid^3\)</li>
+            <li>\(\mid E_T\mid=\mid A-T_n\mid\leq\frac{K_2}{12n^2}\mid b-a\mid^3\)</li>
+        </ol>
+        
+    </body>
+</html>

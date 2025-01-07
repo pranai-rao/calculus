@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>FTC Part 2</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="MVT.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="Substitution.html">Next</a></div>
+        </div>
+        <h1>Fundamental Theorem of Calculus, Part 2</h1>
+        <p>If \(f\) is a conitnuous nonnegative function on \([a,b]\) and if \(A(x)\) is the area under the graph of \(y=f(x)\) over \([a,b]\), then \(A'(x)=f(x)\).</p>
+        <p>But \(A(x)=\int_a^xf(t)dt\)</p>
+        <p>Thus, $$\begin{align}A'(x) &= \frac{d}{dx}A(x)\\
+            &= \frac{d}{dx}\bigg{[}\int_a^xf(t)dt\bigg{]}\\
+            &= f(x)\end{align}$$
+        </p>
+        <p>This is very important as it applies even when \(f\) has negative values.</p>
+        <h2>FTC Part 2</h2>
+        <p>If \(f\) is continuous on an interval, then \(f\) has an antiderivative on that interval. In particular, is \(a\) is any point in the interval, then the function defined by \(F(x)=\int_a^xf(t)dt\) is an antiderivative of \(f\); that is, \(F'(x)=f(x)\) for each \(x\) in the interval, or in an alternative notation, $$\frac{d}{dx}\bigg{[}\int_a^xf(t)dt\bigg{]}=f(x)$$</p>
+
+        <h3>Example</h3>
+        <p>
+            $$\frac{d}{dx}\bigg{[}\int_a^xt^3dt\bigg{]}$$
+            $$\begin{align} f(x) &= \frac{d}{dx}\int_a^xt^3dt \\ f(x) &= x^3 \end{align}$$
+        </p>
+        <p>Be careful. This is NOT integration! This is actually differentiation. There is no "\(+C\)" and there is no "\(\vert_a^b\)".</p>
+
+        <h2>FTC Part 2 (General Versions)</h2>
+        <p>
+            $$\begin{align}F(x) &= \int_a^{g(x)}f(t)dt \\
+            \frac{d}{dx}\bigg{[}\int_a^{g(x)}f(t)dt\bigg{]} &= f(g(x))g'(x) \end{align}$$
+        </p>
+        <p>\(F(x)=\int_a^xf(t)dt\)</p>
+        <p>\(F(x^2)=\int_a^{x^2}f(t)dt\)</p>
+        <p>Because of the chain rule, we get \(g'(x)\) because it is a composite function.</p>
+
+        <h3>Example</h3>
+        <ol>
+            <li>Evaluate \(\frac{d}{dx}[\int_a^{x^2}t^3dt]\)</li>
+            <p>$$(x^2)^3\cdot(2x)$$</p>
+            <p>$$2x^7$$</p>
+            <li>Evaluate \(\frac{d}{dx}[\int_a^{\sin(x)}t^3dt]\)</li>
+            <p>$$\sin^3(x)\cdot\cos(x)$$</p>
+        </ol>
+
+        <h2>Differentiation and Integration as Inverse Processes</h2>
+        <p>Differentiation and integration are processes that undo each other:</p>
+        <p>FTC 1 implies: $$\int_a^xf'(t)dt=f(b)-f(a)$$</p>
+        <p>FTC 2 states: $$\frac{d}{dx}\bigg{[}\int_a^xf(t)dt\bigg{]}=f(x)$$</p>
+        <p>This theorem ranks as one of the greatest discoveries in the history of math or science and its formulation by Newton and Leibniz is generally regarded as the "discovery of calculus."</p>
+    </body>
+</html>

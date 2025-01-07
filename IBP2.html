@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Integration by Parts 2</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="IBP1.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="PowerOfTrig.html">Next</a></div>
+        </div>
+        <h1>Integration by Parts, Part 2</h1>
+        <h3>Example</h3>
+        <ol class="practice">
+            <li>\(\int x^2e^{-x}dx\)</li>
+            <p>\(\begin{align}u &= x^2 \\ du &= 2xdx\end{align}\) \(\begin{align}dv &= e^{-x}dx \\ v &= -e^x\end{align}\)</p>
+            <p>
+                $$\begin{align}\int udv &= uv- \int vdu \\
+                \int x^2e^{-x}dx &= -x^2e^{-x}+\int2xe^{-x}dx\end{align}$$
+            </p>
+            <p>\(\begin{align}u &= 2x \\ du &= 2dx\end{align}\) \(\begin{align}dv &= e^{-x}dx \\ v &= -e^x\end{align}\)</p>
+            <p>
+                $$\begin{align}\int x^2e^{-x}dx &= -x^2e^{-x}+\bigg{[}-2xe^{-x}-\int-2e^{-x}dx\bigg{]} \\
+                &= -x^2e^{-x}-2xe^{-x}+\int2e^{-x}dx \\
+                &= -x^2e^{-x}-2xe^{-x}-2e^{-x}+C\end{align}$$
+            </p>
+        </ol>
+        <p>Sometimes it is necessary to use IbP more than once. When we have integrals in the form \(\int p(x)f(x)dx\) where \(p(x)\) is a polynomial, can sometimes be evaluated using repeated IbP where \(u=p(x)\), or one of its derivatives, at each stage.</p>
+        <p>Since \(p(x)\) is a polynomial, repeated differentiation will eventually produce zero—at which point you will be left with a simplified integration problem.</p>
+        <p>Organizing this can be done with tabular IbP.</p>
+
+        <h2>Tabular IbP</h2>
+        <h3>Steps</h3>
+        <ol class="practice">
+            <li>Differentiate \(p(x)\) until you obtain zero. List in the first column.</li>
+            <li>Integrate \(f(x)\) repeatedly in the second column to match all rows in the first column.</li>
+            <li>Draw an arrow from each entry in the first column to one row down in the second column.</li>
+            <li>Label arrows with an alternating \(+\) and \(-\) sign. Always start with the \(+\) sign.</li>
+            <li>For each arrow, form the product at its tip and end and its corresponding \(+/-\) sign. Sum the products for the result.</li>
+        </ol>
+        <h3>Example</h3>
+        <ol>
+            <li>\(\int(x^2-x)\cos(x)dx\)</li>
+            <table class="ibp">
+                <tr class="ibp">
+                    <th class="ibp"><p class="bi">u</p></th>
+                    <th class="ibp"></th>
+                    <th class="ibp"><p class="bi">dv</p></th>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(x^2-x\)</td>
+                    <td class="ibp">\(\searrow^+\)</td>
+                    <td class="ibp">\(\cos(x)\)</td>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(2x-1\)</td>
+                    <td class="ibp">\(\searrow^-\)</td>
+                    <td class="ibp">\(\sin(x)\)</td>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(2\)</td>
+                    <td class="ibp">\(\searrow^+\)</td>
+                    <td class="ibp">\(-\cos(x)\)</td>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(0\)</td>
+                    <td class="ibp">\(\rightarrow\)</td>
+                    <td class="ibp">\(-\sin(x)\)</td>
+                </tr>
+            </table>
+        </ol>
+        <p>$$\int (x^2-x)\cos(x)dx=(x^2-x)\sin(x)+(2x-1)\cos(x)-2\sin(x)+C$$</p>
+        <h3>What if neither function is a polynomial?</h3>
+        <p>$$\int e^x\cos(x)dx$$</p>
+        <p>No matter what you choose for \(u\), it will never come to zero. IbP still works, however, and tabular IbP can help us.</p>
+        <h3>Example</h3>
+        <ol>
+            <li>\(\int e^x\cos(x)dx\)</li>
+            <table class="ibp">
+                <tr class="ibp">
+                    <th class="ibp"><p class="bi">u</p></th>
+                    <th class="ibp"></th>
+                    <th class="ibp"><p class="bi">dv</p></th>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(e^x\)</td>
+                    <td class="ibp">\(\searrow^+\)</td>
+                    <td class="ibp">\(\cos(x)\)</td>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(e^x\)</td>
+                    <td class="ibp">\(\searrow^-\)</td>
+                    <td class="ibp">\(\sin(x)\)</td>
+                </tr>
+                <tr class="ibp">
+                    <td class="ibp">\(e^x\)</td>
+                    <td class="ibp">\(\rightarrow\)</td>
+                    <td class="ibp">\(-\cos(x)\)</td>
+                </tr>
+            </table>
+        </ol>
+        <p>$$\begin{align}\int e^x\cos(x)dx &= e^x\sin(x)+e^x\cos(x)-\int e^x\cos(x)dx \\
+            2\int e^x\cos(x)dx &= e^x\sin(x)+e^x\cos(x) \\
+            \int e^x\cos(x)dx &= \frac{1}{2}e^x(\sin(x)+\cos(x))+C\end{align}$$
+        </p>
+    </body>
+</html>
