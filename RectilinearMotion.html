@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rectilinear Motion</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="CalculusOfPolarFunctions.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="ParametricFunctions.html">Next</a></div>
+        </div>
+        <h1>Rectilinear Motion (Motion along a Line)</h1>
+        <p>There is a relationship between position, velocity, and acceleration. Velocity is the derivative of position, and acceleration is the derivative of velocity. Likewise, velocity is the antiderivative of acceleration, and position is the antiderivative of velocity.</p>
+
+        <h2>Distance vs. Displacement</h2>
+        <p>Distance—the total path ocvered by the object in motion between time \(t=a\) and \(t=b\).</p>
+        <p>Displacement—total change in the position of the object in motion between time \(t=a\) and \(t=b\).</p>
+        <p class="bold">Important: These are <span class="italic">not</span> always the same value.</p>
+        <div class="flexcol">
+            <div>
+                <p class="bold">Distance</p>
+                <ul>
+                    <p>$$d=\int_a^b|v(t)|dt$$</p>
+                    <li>Denoted by the symbol \(d\)</li>
+                    <li>The total path length</li>
+                    <li>Must be a positive value</li>
+                    <li>Has no direction</li>
+                    <li>Scalar</li>
+                </ul>
+            </div>
+            <div>
+                <p class="bold">Displacement</p>
+                <ul>
+                    <p>$$s=\int_a^bv(t)dt$$</p>
+                    <li>Denoted by the symbol \(s\)</li>
+                    <li>The length between initial and final points</li>
+                    <li>Can be positive, negative, or zero</li>
+                    <li>Has a direction</li>
+                    <li>Vector</li>
+                </ul>
+            </div>
+        </div>
+        <p>Throughout calculus you will see analytic, numeric, and graphic applications of rectilinear motion.</p>
+
+        <h3>Example – Analytic</h3>
+        <p>A particle is moving along a horizontal path. At time \(t\), its velocity is given by \(v(t)=6\sin(3t)\) for \(0\let\le\frac{\pi}{2}\).</p>
+        <ol>
+            <li>Find a function that describes the particle's acceleration.</li>
+            <p>\(\begin{align}a(t) &= v'(t) \\ &= 6\cos(3t)\cdot3 \\ &= 18\cos(3t)\end{align}\)</p>
+            <li>Find a function that describes the particle's position.</li>
+            <p>\(\begin{align}x(t) &= \int v(t)dt \\ &= \int6\sin(3t)dt \\ &= -2\cos(3t)+C\end{align}\)</p>
+            <li>Find the particle's displacement over the time interval.</li>
+            <p>\(\begin{align}s &= \int v(t)dt \\ &= \int_0^{\frac{\pi}{2}}6\sin(t)dt \\ &= 2\end{align}\)</p>
+            <li>Find the total distance traveled by the particle over the time interval.</li>
+            <p>\(\begin{align}d &= \int_a^b|v(t)|dt \\ &= \int_0^{\frac{\pi}{2}}|6\sin(t)|dt \\ &= 6\end{align}\)</p>
+        </ol>
+
+        <h3>Example – Graphic</h3>
+        <p>The graph below shows the velocity \(v=f(t)\) of a particle moving on a coordinate line.</p>
+        <img src="img/rect2.png" height="200">
+        <ol>
+            <li>When does the particle</li>
+            <ol class="alpha">
+                <li>Move forward?</li>
+                <p>\((0,1)\cup(5,7)\)</p>
+                <li>Move backward?</li>
+                <p>\((1,5)\cup(7,9)\)</p>
+                <li>Speed up?</li>
+                <p>\((1,2)\cup(5,7)\cup(7,8)\)</p>
+                <li>Slow down?</li>
+                <p>\((0,1)\cup(3,5)\cup(6,7)\)</p>
+            </ol>
+            <li>When is the particle's acceleration</li>
+            <ol class="alpha">
+                <li>Positive?</li>
+                <p>\((3,6)\)</p>
+                <li>Negative?</li>
+                <p>\((0,2)\cup(6,8)\)</p>
+                <li>Zero?</li>
+                <p>\((2,3)\cup(8,9)\)</p>
+            </ol>
+            <li>When does the particle have its greatest speed?</li>
+            <p>\((2,3)\)</p>
+            <li>When does the particle stand still for more than an instant?</li>
+            <p>\(\fbox{The particle is never at rest for more than an instant.}\)</p>
+        </ol>
+
+        <h3>Example – Numeric</h3>
+        <p>The data in the table below give selected values for the velocity, in meters/minute, of a particle moving along the \(x\)-axis. The velocity \(v\) is a differentiable function of time.</p>
+        <img src="/img/rect3.png" width="500">
+        <ol>
+            <li>At \(t=0\), is the particle moving to the right or to the left? Explain your answer.</li>
+            <p>\(v(0)=-3\lt0\)</p>
+            <p>\(\fbox{The particle is moving left.}\)</p>
+            <li>Is there a time during the time interval \(0 \leq t \leq 12\) minutes when the particle is at rest? Explain your answer.</li>
+            <p>\(\fbox{Yes.}\) Since the velocity is a differentiable function, it is continuous. The Intermediate Value Theorem says that, since \(v\) changes from negative to positive, it must go through \(0\). Thus, there is a point where \(v(t)=0\).</p>
+            <li>Use the data from the table to find an approximation for \(v'(10)\) and explain the meaning of \(v'(10)\) in terms of the motion of the particle. Show the computations that lead to your answer and indicate units of measure.</li>
+            <p>\(\begin{align}v'(10) &\approx \frac{v(12)-v(6)}{12-8} \\ &\approx \frac{5-7}{12-8} \\ &\approx -\frac{1}{2}\end{align}\)</p>
+            <p>\(\fbox{\(v'(10)\) is approximately \(-\frac{1}{2}\) m/s\(^2\), and the particle is slowing down.}\)</p>
+            <li>Let \(a(t)\) denote the acceleration of the particle at time \(t\). Is there guaranteed to be a time \(t=c\) in the interval \(0\leq t\leq12\) such that \(a(c)=0\)? Justify your answer.</li>
+            <p>Apply the Mean Value Theorem (Rolle's Theorem).</p>
+            <p>\(\frac{v(12)-v(6)}{12-6}=0\)</p>
+            <p>Since we have a continuous function, the MVT says there must be a \(c\) between \(t=6\) and \(t=12\) such that \(v'(t)=a(c)=0\)</p>
+        </ol>
+    </body>
+</html>

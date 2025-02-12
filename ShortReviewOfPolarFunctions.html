@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Review of Polar Functions</title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="CalculusOfPolarFunctions.html">Next</a></div>
+        </div>
+        <h1>A Short Review of Polar Functions</h1>
+        <p>Recall that a <span class="bi">polar coordinate system</span> is a coordinate system based on the idea that the location of a point might be best described by its distance from a fixed point and its angular direction.</p>
+        <p>This system in a plane consists of a fixed point \(O\), called the <span class="bi">pole</span> and a ray emanating from the pole, called the <span class="bi">polar axis</span>.</p>
+        <p>Just as with a cartesian (rectangular) plane, where a grid is placed over the axis, a polar grid is placed over the polar axis.</p>
+
+        <h2>Converting Between Polar and Cartesian Coordinates</h2>
+        <p>There are some simple relationships to convert between coordinates:</p>
+        <p class="center">\(\begin{align}&x =r\cos(\theta) \\ &r^2 =x^2+y^2\end{align}\)&emsp;&emsp;\(\begin{align}&y =r\sin(\theta) \\ &\tan(\theta)=\frac{y}{x}\end{align}\)</p>
+
+        <h2>Lines and Circles</h2>
+        <table>
+            <tr>
+                <th>Lines</th>
+                <th>Circles</th>
+            </tr>
+            <tr>
+                <td>\(\theta=k\)</td>
+                <td>Centered at the origin:<br>\(r=k\)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Centered on the x-axis:<br>\(r=k\cos(\theta)\)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Centered on the y-axis:<br>\(r=k\sin(\theta)\)</td>
+            </tr>
+        </table>
+
+        <h2>Points of Intersection</h3>
+        <p>The other vital piece of information is to be able to determine how many times and where two (or more) polar curves intersect.</p>
+        <p>Just like in cartesian coordinates, where we needed ot find a point with the same \(x\) and \(y\) value, we will need to find a point with the same \(r\) and \(\theta\) value. <span class="bold">Note: Graphs can be deceiving!</span></p>
+        <h3>Example</h3>
+        <p>Find the points of intersection of \(r=\sin(\theta)\) and \(r=1-\sin(\theta)\).</p>
+        <p>$$\begin{align}\sin(\theta) &= 1-\sin(\theta) \\ 2\sin(\theta) &= 1 \\ \sin(\theta) &= \frac{1}{2}\end{align}$$</p>
+        <p class="center">\(\theta_\mathrm{I}=\frac{\pi}{6}\)&emsp;&emsp;\(\theta_\mathrm{II}=\frac{5\pi}{6}\)</p>
+        <p class="center">\((\frac{1}{2},\frac{\pi}{6})\)&emsp;&emsp;\((\frac{1}{2},\frac{5\pi}{6})\)</p>
+    </body>
+</html>
