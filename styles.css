@@ -114,3 +114,11 @@ ol.alpha > li:before {
 .italic {
     font-style: italic;
 }
+
+::selection {
+    background-color: rgb(255, 255, 0);
+}
+::-moz-selection {
+    background: rgb(255, 255, 0);
+}
+
