@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="img/integral.png">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div id="nav">
+            <div><a href="AreaBetweenCurves.html">Previous</a></div>
+            <div><a href="index.html">Table of Contents</a></div>
+            <div><a href="">Next</a></div>
+        </div>
+        <h1>Finding Volume: Known Cross Sections</h1>
+        <p>With the basis of finding area by integration, the next step is to find volume.</p>
+        <p>The first type of problem we will look at are solids formed by what we call "known cross-sections."</p>
+        <img src="img/VKCS1.png" height="300">
+        <p>In the figure above, you can see two cross-sections that are squares, that are coming out of this base. The base is in the xy-plane, and the cross-sections are projecting up. Imagine an infinite number of squares covering the entire base; that is the solid we will be finding the volume of.</p>
+        <p>This can often be difficult to visualize, but you'll find that finding the volume is very straightforward.</p>
+        <br>
+        <p>What makes these solids harder to visualize is that their shape depends on the shape of the corss-section—not on the shape of the base.</p>
+        <img src="img/VKCS2.jpeg" height="300">
+        <p>In the figure above, you can see that the base is \(y=x^2\) for all the models, but the shape of the cross-sections produce a different solid with a different volume.</p>
+        <p>So how are we going to find a way to calculate these volumes when they are all different? Easy—we go back to the beginning.</p>
+        <p>Recall that the underlying principle for finding the area of a plane region is to divide the region into thin strips, approximate the area of each strip with the area of a rectangle, add the approximations to form a Riemann sum, and then take the limit of the Riemann sum to produce an integral for the area.</p>
+        <p>Under appropriate conditions, the same strategy can be used to find the volume of a solid.</p>
+        <p>The idea is to divide the solid into thin slabs, approximate the volume of each slab, add the approximations to form a Riemann sum, and take the limit of the Riemann sum to produce an integral for the volume.</p>
+        <img src="img/VKCS3.png" height="150">
+        <p>What makes this method work is the fact that a <span class="italic">thin</span> slab as a cross-section does not vary much in size or shape.</p>
+        <img src="img/VKCS4.png" height="100">
+        <p>Moreover, the thinner the slab, the less variation in its cross-sections and the better approximation.</p>
+        <p>Thus, once we approximate the volumes of the slabs, we can set up a Riemann sum whose limit is the volume of the entire solid.</p>
+        <br>
+        <p>So the problem has slightly changed. Instead of looking for the volume of the entire solid, all we need to do is find the volume of each slab.</p>
+        <p>It turns out that finding the volume of one of the slabs isn't too hard as long as we can find the area of the cross-section.</p>
+        <img src="img/VKCS5.png" height="125">
+        <p>If we can find that area, then the volume of the slab is simply that area times the "height."</p>
+        <p>$$dV=Ah=[\text{area of a cross section}][\text{height}]$$</p>
+        <p>So, we've changed the problem again; now, all we need to do is find the area of the cross-section. Once we have that, we have a way of writing the volume of the slab.</p>
+        <p>Our cross-sections will be perpendicular to either the \(x\)-axis or the \(y\)-axis—always.</p>
+        <p>The good thing is that the area of the cross-sections will be shapes that we know area formulas for: squares, triangles, rectangles, circles, semicricles, etc.</p>
+        <p>The hardest part will be synthesizing those formulas with the function used to describe the region.</p>
+
+        <h2>Finding the Area</h2>
+        <img src="img/VKCS6.png" height="150">
+        <p>Of course, we are familiar with finding the areas of shapes, but usually we know a side length. However, now, our base is defined by the function.</p>
+        <p>Let's say that the side length of the square is \(x^2-x\). Then the area can be written as a function of \(x\): \(A(x)=(x^2-x)^2\).</p>
+        <p>Likewise, if the base of the triangle was \(\sin(x)+3x\), then the area can be written as \(A(x)=\frac{1}{2}(\sin(x)+3x)^2\).</p>
+        <p>If the diameter of the circle is \(\ln(x)\), then \(A(x)=\frac{1}{4}\pi[\ln(x)]^2\)</p>
+
+        <h2>Process</h2>
+        <p>Here's the process we're going to follow to find volume by known cross-section:</p>
+        <ol>
+            <li>Draw a graph of the base region.</li>
+            <li>Draw a rectabgle in the region representing the "edge" of the cross-section. This rectangle will be vertical or horizontal depending on the problem (are the cross-sections perpendicular to the \(x\)- or \(y\)-axis?)</li>
+            <li>Draw and label the base of the cross-section. Write down the area formula you are going to use.</li>
+            <li>Find points of intersection (as needed).</li>
+            <li>Write an expression for \(dV\)—based on the formula for the base area and the orientation fo the rectangles.</li>
+            <li>Integrate to get \(V\)</li>
+        </ol>
+        <p>A calculator will be used frequently to perform integration.</p>
+
+        <h3>Practice</h3>
+        <p>Find the volume of the solid whose base is bounded by \(y=x+1\) and \(y=x^2-1\) and which is formed by square cross-sections that are perpendicular to the \(x\)-axis.</p>
+        <p class="italic">Note: Because the cross-sections are perpendicular to the \(x\)-axis, the rectangles will be drawn perpendicular to the \(x\)-axis.</p>
+        <p>$$\begin{align}A &= s^2 \\ A(x) &= [x+1-(x^2-1)]^2 \\ &= [x+1-x^2+1]^2 \\ A(x) &= [-x^2+x+2]^2\end{align}$$</p>
+        <p>$$\begin{align}x+1 &= x^2-1 \\ x^2-x-2 &= 0 \\ (x-2)(x+1) &= 0 \\ x &=2\text{, }x=-1\end{align}$$</p>
+        <p>$$V=\text{Base area}\cdot\text{height}$$</p>
+        <p>$$dV=(-x^2+x+2)^2dx$$</p>
+        <p>$$\begin{align}V &= \int_{-1}^2(-x^2+x+2)^2dx \\ &= 8.1\end{align}$$</p>
+        <br>
+        <p>Find the volume of the solid whose base is bounded by \(\sqrt{x}\) and \(y=x^2\) and which is formed by cross-sections that are equilateral triangles perpendicular to the \(y\)-axis.</p>
+        <p class="italic">Note: Because the cross-sections are perpendicular to the \(y\)-axis, the rectangles will be drawn perpendicular to the \(y\)-axis.</p>
+        <p>$$\begin{align}A &= \frac{1}{2}bh \\ &=\frac{1}{2}(\sqrt{y}-y^2)\frac{\sqrt{3}}{2}(\sqrt{y}-y^3) \\ &= \frac{\sqrt{3}}{4}(\sqrt{y}-y^2)^2\end{align}$$</p>
+        <p>\begin{align}y^2 &= \sqrt{y} \\ y^4 &= y \\ y^4-y &= 0 \\ y(y^3-1) &= 0 \\ y &= 0\text{, }y=1\end{align}</p>
+        <p>$$V=\text{Base area}\cdot\text{height}$$</p>
+        <p>$$dV=\frac{\sqrt{3}}{4}(\sqrt{y}-y^3)^2dy$$</p>
+        <p>$$\begin{align}V &= \int_0^1\frac{\sqrt{3}}{4}(\sqrt{y}-y^2)^2dy \\ &= 0.056\end{align}$$</p>
+    </body>
+</html>
